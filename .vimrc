@@ -4,8 +4,8 @@ filetype plugin indent on
 set listchars=tab:..
 set list
 set ww=[,],<,>,h,l,b
-set background=dark
 colorscheme solarized
+set background=dark
 set tabstop=4
 set shiftwidth=4
 set autoindent
