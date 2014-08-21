@@ -6,8 +6,9 @@ set list
 set ww=[,],<,>,h,l,b
 colorscheme solarized
 set background=dark
-set tabstop=4
-set shiftwidth=4
+set expandtab
+set tabstop=2
+set shiftwidth=2
 set autoindent
 set number
 

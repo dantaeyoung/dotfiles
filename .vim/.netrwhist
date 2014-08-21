@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/provolot/Documents/github/continuous-sunset/js/sunrise'
+let g:netrw_dirhist_2='/Users/provolot/Documents/github/continuous-sunset/app/models'
+let g:netrw_dirhist_3='/Users/provolot/Documents/github/undecimalclock/www'
+let g:netrw_dirhist_4='/Users/provolot/Documents/github/hendechron/platforms/ios/Hendechron'
+let g:netrw_dirhist_5='/Users/provolot/Documents/github/hendechron/platforms/ios/Hendechron.xcodeproj'
+let g:netrw_dirhist_6='/Users/provolot/Documents/github/hendechron/platforms/ios/Hendechron.xcodeproj/project.xcworkspace'
+let g:netrw_dirhist_7='/Users/provolot/.ssh'
