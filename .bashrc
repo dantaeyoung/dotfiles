@@ -1,4 +1,4 @@
-
+export PATH="$HOME/Library/Haskell/bin:$PATH"
 
 if [ "$TERM" != "dumb" ]; then
 
@@ -15,7 +15,8 @@ if [ "$TERM" != "dumb" ]; then
       #alias vdir='ls --color=auto --format=long'
 fi
 
+export CLICOLOR=1
+
 umask 002
 EDITOR=/usr/bin/vim
 PS1="[\u@\H:\w ] $ "
-
