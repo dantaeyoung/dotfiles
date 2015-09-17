@@ -2,6 +2,7 @@ syntax on
 filetype on
 filetype plugin indent on
 set listchars=tab:..
+match NonText '^\s\+'
 set list
 set ww=[,],<,>,h,l,b
 colorscheme solarized
