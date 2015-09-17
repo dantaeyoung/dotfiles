@@ -20,3 +20,5 @@ export CLICOLOR=1
 umask 002
 EDITOR=/usr/bin/vim
 PS1="[\u@\H:\w ] $ "
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
