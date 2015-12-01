@@ -51,7 +51,9 @@ nnoremap <space> za
 
 "NERDTREE STUFF
 autocmd vimenter * NERDTree | wincmd p 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 map <C-n> :NERDTreeToggle<CR>
 
 "MACVIM stuff
