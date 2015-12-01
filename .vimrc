@@ -3,16 +3,16 @@ execute pathogen#infect('~/.vim/bundle/{}')
 ""execute pathogen#infect()
 filetype on
 filetype plugin indent on
+set list
 set listchars=tab:..
 match NonText '^\s\+'
-set list
 set ww=[,],<,>,h,l,b
 colorscheme solarized
 set background=dark
 set tabstop=4
-set shiftwidth=2
+set shiftwidth=4
 set autoindent
-set expandtab
+set noexpandtab
 set number
 set paste
 
@@ -30,6 +30,7 @@ map <C-n> :NERDTreeToggle<CR>
 
 "MACVIM stuff
 if has("gui_macvim")
+  let macvim_skip_colorscheme=1
   set guifont=Source\ Code\ Pro:h13
   map <D-1> :tabfirst<Cr>
   map <D-2> :tabfirst<Cr>gt
