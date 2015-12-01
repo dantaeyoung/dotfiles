@@ -1,8 +1,34 @@
+set nocompatible
+filetype off
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'rizzatti/dash.vim'
+Plugin 'Yggdroot/indentLine'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'tpope/vim-abolish'
+Plugin 'bling/vim-airline'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'mitsuhiko/vim-jinja'
+Plugin 'tpope/vim-surround'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
+
 syntax on
-execute pathogen#infect('~/.vim/bundle/{}')
+"execute pathogen#infect('~/.vim/bundle/{}')
 ""execute pathogen#infect()
 filetype on
-filetype plugin indent on
 set list
 set listchars=tab:..
 match NonText '^\s\+'
