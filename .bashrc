@@ -3,6 +3,8 @@
 if [ "$TERM" != "dumb" ]; then
 
     #osx compliant
+	alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+
     if which dircolors >/dev/null; then
       eval "$(dircolors -b)"
       alias ls='ls --color=auto'
@@ -23,3 +25,5 @@ PS1="[\u@\H:\w ] $ "
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export TZ=America/New_York
+
+
