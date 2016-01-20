@@ -19,29 +19,33 @@ Plugin 'bling/vim-airline'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'mitsuhiko/vim-jinja'
-Plugin 'tpope/vim-surround'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'mxw/vim-jsx'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+set softtabstop=4
+" On pressing tab, insert 4 spaces
+set noexpandtab
+
 
 
 syntax on
-"execute pathogen#infect('~/.vim/bundle/{}')
-""execute pathogen#infect()
 filetype on
-set list
-set listchars=tab:..
+set nolist
+"set listchars=tab:|-
 match NonText '^\s\+'
 set ww=[,],<,>,h,l,b
 colorscheme solarized
 set background=dark
-set tabstop=4
-set shiftwidth=4
-set autoindent
-set noexpandtab
 set number
 set paste
 
@@ -58,6 +62,19 @@ autocmd vimenter * NERDTree | wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 map <C-n> :NERDTreeToggle<CR>
+
+"NERDTREE-GIT-PLUGIN STUFF
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
 
 "MACVIM stuff
 if has("gui_macvim")
