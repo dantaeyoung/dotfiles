@@ -11,14 +11,15 @@ if [ "$TERM" != "dumb" ]; then
     else
       #OSX
       export CLICOLOR=1
-      alias ls='ls -G'
+      export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+      alias ls='ls -F'
     fi
       #alias dir='ls --color=auto --format=vertical'
       #alias vdir='ls --color=auto --format=long'
 fi
 
-export CLICOLOR=1
+
+export PS1="\[\033[0;35m\]\h \[\033[1;35m\](\w) \[\033[0;35m\]> \[\033[0;37m\] \e[37m"
 
 umask 002
 EDITOR=/usr/bin/vim
-PS1="[\u@\H:\w ] $ "

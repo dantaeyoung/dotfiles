@@ -13,9 +13,8 @@ Plugin 'rizzatti/dash.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'tpope/vim-abolish'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'mitsuhiko/vim-jinja'
@@ -23,10 +22,30 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'mxw/vim-jsx'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'sophacles/vim-processing'
+Plugin 'scrooloose/syntastic'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+
+let g:airline#extensions#tabline#enabled = 1
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['pyflakes']
+let g:syntastic_html_checkers=['']
+
+au BufNewFile,BufRead *.ejs set filetype=html
+
+
 
 " show existing tab with 4 spaces width
 set tabstop=4
@@ -34,7 +53,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 " On pressing tab, insert 4 spaces
-set noexpandtab
+set expandtab
 
 
 
@@ -47,7 +66,6 @@ set ww=[,],<,>,h,l,b
 colorscheme solarized
 set background=dark
 set number
-set paste
 
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
@@ -84,4 +102,5 @@ if has("gui_macvim")
   map <D-2> :tabfirst<Cr>gt
   map <D-3> :tabfirst<Cr>3gt
   map <D-4> :tabfirst<Cr>4gt
+  map <D-5> :tabfirst<Cr>5gt
 endif
