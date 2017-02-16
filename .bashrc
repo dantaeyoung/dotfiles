@@ -3,7 +3,9 @@
 if [ "$TERM" != "dumb" ]; then
 
     #osx compliant
-	alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+#	alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+	alias vim='/usr/local/bin/nvim'
+	alias vi='/usr/local/bin/nvim'
 
     if which dircolors >/dev/null; then
       eval "$(dircolors -b)"
@@ -20,7 +22,7 @@ fi
 export CLICOLOR=1
 
 umask 002
-EDITOR=/usr/bin/vim
+EDITOR=/usr/local/bin/nvim
 PS1="[\u@\H:\w ] $ "
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

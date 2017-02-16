@@ -9,7 +9,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'rizzatti/dash.vim'
+Plugin 'altercation/vim-colors-solarized'
+
 Plugin 'Yggdroot/indentLine'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -17,13 +18,21 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'hail2u/vim-css3-syntax'
-Plugin 'mitsuhiko/vim-jinja'
+"Plugin 'mitsuhiko/vim-jinja'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'mxw/vim-jsx'
+"Plugin 'mxw/vim-jsx'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'sophacles/vim-processing'
-Plugin 'scrooloose/syntastic'
+
+Plugin 'pangloss/vim-javascript.git'
+
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'isRuslan/vim-es6' 
+
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -32,40 +41,39 @@ filetype plugin indent on    " required
 
 let g:airline#extensions#tabline#enabled = 1
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+let g:javascript_plugin_jsdoc = 1
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['pyflakes']
-let g:syntastic_html_checkers=['']
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
 
 au BufNewFile,BufRead *.ejs set filetype=html
 
 
 
-" show existing tab with 4 spaces width
-set tabstop=4
-" when indenting with '>', use 4 spaces width
-set shiftwidth=4
-set softtabstop=4
-" On pressing tab, insert 4 spaces
+" show existing tab with 2 spaces width
+set tabstop=2
+" when indenting with '>', use 2 spaces width
+set shiftwidth=2
+set softtabstop=2
+" On pressing tab, insert 2 spaces
 set expandtab
 
 
 
-syntax on
+syntax enable
 filetype on
 set nolist
 "set listchars=tab:|-
 match NonText '^\s\+'
 set ww=[,],<,>,h,l,b
-colorscheme solarized
-set background=dark
+
 set number
+
+set termguicolors
+set background=dark
+colorscheme solarized
 
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
