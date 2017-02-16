@@ -71,9 +71,8 @@ set ww=[,],<,>,h,l,b
 
 set number
 
-set termguicolors
 set background=dark
-colorscheme solarized
+colorscheme apprentice
 
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
