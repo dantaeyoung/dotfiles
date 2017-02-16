@@ -1,7 +1,116 @@
 let $PATH = '/usr/local/bin:'.$PATH
 
- set nocompatible
-filetype off
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Sets how many lines of history VIM has to remember
+set history=500
+
+" Enable filetype plugins
+filetype plugin on
+filetype indent on
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" Turn on the WiLd menu
+set wildmenu
+
+" Ignore compiled files
+set wildignore=*.o,*~,*.pyc
+if has("win16") || has("win32")
+    set wildignore+=.git\*,.hg\*,.svn\*
+else
+		set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+endif
+
+
+
+" Highlight search results
+set hlsearch
+
+" Don't redraw while executing macros (good performance config)
+set lazyredraw 
+
+" Show matching brackets when text indicator is over them
+set showmatch  
+
+" How many tenths of a second to blink when matching brackets
+set mat=2
+
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
+" Properly disable sound on errors on MacVim
+if has("gui_macvim")
+    autocmd GUIEnter * set vb t_vb=
+endif
+
+" Add a bit extra margin to the left
+set foldcolumn=1
+
+" copy paste works
+set paste
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Colors and Fonts
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Enable syntax highlighting
+syntax enable 
+
+" Enable 256 colors palette in Gnome Terminal
+if $COLORTERM == 'gnome-terminal'
+    set t_Co=256
+endif
+
+try
+    colorscheme flattened_dark
+catch
+endtry
+
+set background=dark
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Text, tab and indent related
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use spaces instead of tabs
+set expandtab
+
+" Be smart when using tabs ;)
+set smarttab
+
+" 1 tab == 4 spaces
+set shiftwidth=2
+set tabstop=2
+
+set ai "Auto indent
+set si "Smart indent
+set wrap "Wrap lines
+
+" show line numbers 
+set number
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Moving around, tabs, windows and buffers
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Return to last edit position when opening files (You want this!)
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" Word wrap with navigation
+set ww=[,],<,>,h,l,b
+
+""""""""""""""""""""""
+" VUNDLE
+""""""""""""""""""""
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -18,9 +127,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'hail2u/vim-css3-syntax'
-"Plugin 'mitsuhiko/vim-jinja'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-"Plugin 'mxw/vim-jsx'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'sophacles/vim-processing'
@@ -36,7 +143,6 @@ Plugin 'isRuslan/vim-es6'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
 
 
 let g:airline#extensions#tabline#enabled = 1
@@ -50,29 +156,6 @@ let g:javascript_plugin_jsdoc = 1
 
 au BufNewFile,BufRead *.ejs set filetype=html
 
-
-
-" show existing tab with 2 spaces width
-set tabstop=2
-" when indenting with '>', use 2 spaces width
-set shiftwidth=2
-set softtabstop=2
-" On pressing tab, insert 2 spaces
-set expandtab
-
-
-
-syntax enable
-filetype on
-set nolist
-"set listchars=tab:|-
-match NonText '^\s\+'
-set ww=[,],<,>,h,l,b
-
-set number
-
-set background=dark
-colorscheme apprentice
 
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
