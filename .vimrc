@@ -1,4 +1,58 @@
-let $PATH = '/usr/local/bin:'.$PATH
+""""""""""""""""""""""
+" VUNDLE
+""""""""""""""""""""
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+"Next generation completion framework after neocomplcache
+Plugin 'Shougo/neocomplete'
+
+"A vim plugin to display the indention levels with thin vertical lines
+Plugin 'Yggdroot/indentLine'
+"A Vim plugin for visually displaying indent levels in code
+"Plugin 'nathanaelkane/vim-indent-guides'
+
+"A tree explorer plugin for vim.
+Plugin 'scrooloose/nerdtree'
+"A plugin of NERDTree showing git status
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+"Vim plugin for intensely orgasmic commenting
+Plugin 'scrooloose/nerdcommenter'
+"lean & mean status/tabline for vim that's light as air
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+""""""""" LANGUAGE-SPECIFIC
+"CoffeeScript support for vim
+"Plugin 'kchmck/vim-coffee-script'
+
+"CSS3 syntax (and syntax defined in some foreign specifications) support for Vim's built-in syntax/css.vim
+Plugin 'hail2u/vim-css3-syntax'
+
+"Vim Pug (formerly Jade) template engine syntax highlighting and indent
+"Plugin 'digitaltoad/vim-puge'
+
+"Enhanced javascript syntax file for Vim 
+Plugin 'jelera/vim-javascript-syntax'
+
+Plugin 'pangloss/vim-javascript'
+
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+let g:javascript_plugin_jsdoc = 1
+
+let g:neocomplete#enable_at_startup = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -6,10 +60,6 @@ let $PATH = '/usr/local/bin:'.$PATH
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
 set history=500
-
-" Enable filetype plugins
-filetype plugin on
-filetype indent on
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -29,6 +79,10 @@ endif
 
 " Highlight search results
 set hlsearch
+
+"This unsets the "last search pattern" register by hitting return
+nnoremap <CR> :noh<CR><CR>
+
 
 " Don't redraw while executing macros (good performance config)
 set lazyredraw 
@@ -106,43 +160,6 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 " Word wrap with navigation
 set ww=[,],<,>,h,l,b
-
-""""""""""""""""""""""
-" VUNDLE
-""""""""""""""""""""
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'altercation/vim-colors-solarized'
-
-Plugin 'Yggdroot/indentLine'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'sophacles/vim-processing'
-
-Plugin 'pangloss/vim-javascript.git'
-
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'isRuslan/vim-es6' 
-
-
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
 
 
 let g:airline#extensions#tabline#enabled = 1
