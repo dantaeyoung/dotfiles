@@ -4,8 +4,8 @@ if [ "$TERM" != "dumb" ]; then
 
     #osx compliant
 #	alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-	alias vim='/usr/local/bin/nvim'
-	alias vi='/usr/local/bin/nvim'
+	alias vim='/usr/bin/vim'
+	alias vi='/usr/bin/vim'
 
     if which dircolors >/dev/null; then
       eval "$(dircolors -b)"
@@ -22,12 +22,13 @@ fi
 export CLICOLOR=1
 
 umask 002
-EDITOR=/usr/local/bin/nvim
+EDITOR=/usr/bin/vim
 PS1="[\u@\H:\w ] $ "
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export TZ=America/New_York
 
+alias vi='/usr/bin/vim'
 
 
 export NVM_DIR="/Users/provolot/.nvm"

@@ -108,7 +108,7 @@ endif
 set foldcolumn=1
 
 " copy paste works
-set paste
+"set paste
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -136,8 +136,6 @@ set background=dark
 " Use spaces instead of tabs
 set expandtab
 
-" Be smart when using tabs ;)
-set smarttab
 
 " 1 tab == 4 spaces
 set shiftwidth=2
@@ -166,10 +164,13 @@ let g:airline#extensions#tabline#enabled = 1
 
 let g:javascript_plugin_jsdoc = 1
 
+" use the same clipboard (leader is usually backslash)
+vmap <leader>y :w! /tmp/vitmp<CR>                                                                   
+nmap <leader>p :r! cat /tmp/vitmp<CR>
+
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
-
 
 au BufNewFile,BufRead *.ejs set filetype=html
 
