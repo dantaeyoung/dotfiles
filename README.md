@@ -8,15 +8,16 @@ dotfiles
 remove .vim/ dir, then run in repo dir:
 
 ```
-ln -sfv ./.vim ~
-ln -sfv ./.vimrc ~
-ln -sfv ./.bashrc ~
-ln -sfv ./.bash_profile ~
+ln -sfv "$(pwd)/.vim" ~
+ln -sfv "$(pwd)/.vimrc" ~
+ln -sfv "$(pwd)/.bashrc" ~
+ln -sfv "$(pwd)/.bash_profile" ~
 ```
+
 
 one line, for my pleasure:
 
-`ln -sfv ./.vim ~ && ln -sfv ./.vimrc ~ && ln -sfv ./.bashrc ~ && ln -sfv ./.bash_profile ~ `
+`ln -sfv "$(pwd)/.vim" ~ && ln -sfv "$(pwd)/.vimrc" ~ && ln -sfv "$(pwd)/.bashrc" ~ && ln -sfv "$(pwd)/.bash_profile" ~`
 
 #### Vundle may have to be installed:
 
