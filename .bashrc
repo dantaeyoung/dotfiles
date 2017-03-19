@@ -35,4 +35,4 @@ export NVM_DIR="/Users/provolot/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 
-. /Users/provolot/torch/install/bin/torch-activate
+#. /Users/provolot/torch/install/bin/torch-activate
