@@ -107,8 +107,8 @@ endif
 " Add a bit extra margin to the left
 set foldcolumn=1
 
-" copy paste works
-"set paste
+" copy paste works with control-p
+set pastetoggle=<c-p>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
