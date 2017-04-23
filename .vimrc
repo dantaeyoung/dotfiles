@@ -10,6 +10,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+"Syntax Highlight for Vue.js components
+Plugin 'posva/vim-vue'
+
 "Next generation completion framework after neocomplcache
 Plugin 'Shougo/neocomplete'
 
@@ -28,6 +31,12 @@ Plugin 'scrooloose/nerdcommenter'
 "lean & mean status/tabline for vim that's light as air
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
+
+Plugin 'christoomey/vim-tmux-navigator'
+"Seamless navigation between tmux panes and vim splits
+
+
 
 """"""""" LANGUAGE-SPECIFIC
 "CoffeeScript support for vim
@@ -148,6 +157,9 @@ set wrap "Wrap lines
 " show line numbers 
 set number
 
+" don't use ESC!
+:imap jk <Esc>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
@@ -159,6 +171,15 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " Word wrap with navigation
 set ww=[,],<,>,h,l,b
 
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Other plugin things
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:airline#extensions#tabline#enabled = 1
 
