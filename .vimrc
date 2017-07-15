@@ -36,6 +36,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'christoomey/vim-tmux-navigator'
 "Seamless navigation between tmux panes and vim splits
 
+"CoffeeScript support for vim
+Plugin 'kchmck/vim-coffee-script'
 
 
 """"""""" LANGUAGE-SPECIFIC
