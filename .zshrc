@@ -2,6 +2,10 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export DOTFILESPATH="$HOME/github/dotfiles"
+source $DOTFILESPATH/config/bash/path
+source $DOTFILESPATH/config/bash/secrets
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/provolot/.oh-my-zsh
 

@@ -36,3 +36,8 @@ export NVM_DIR="/Users/provolot/.nvm"
 
 
 #. /Users/provolot/torch/install/bin/torch-activate
+
+export DOTFILESPATH="$HOME/github/dotfiles"
+source $DOTFILESPATH/config/bash/path
+source $DOTFILESPATH/config/bash/secrets
+
