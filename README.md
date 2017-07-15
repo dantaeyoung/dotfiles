@@ -1,7 +1,7 @@
 dotfiles
 ========
 
-.vimrc, .bashrc, etc
+.vimrc, .bashrc, .zshrc, etc
 
 ### Usage:
 
@@ -12,12 +12,14 @@ ln -sfv "$(pwd)/.vim" ~
 ln -sfv "$(pwd)/.vimrc" ~
 ln -sfv "$(pwd)/.bashrc" ~
 ln -sfv "$(pwd)/.bash_profile" ~
+ln -sfv "$(pwd)/.zshrc" ~
 ```
 
 
 one line, for my pleasure:
 
-`ln -sfv "$(pwd)/.vim" ~ && ln -sfv "$(pwd)/.vimrc" ~ && ln -sfv "$(pwd)/.bashrc" ~ && ln -sfv "$(pwd)/.bash_profile" ~`
+`ln -sfv "$(pwd)/.vim" ~ && ln -sfv "$(pwd)/.vimrc" ~ && ln -sfv "$(pwd)/.bashrc" ~ && ln -sfv "$(pwd)/.bash_profile" ~ && ln -sfv "$(pwd)/.zshrc" ~
+` 
 
 #### Vundle may have to be installed:
 
