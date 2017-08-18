@@ -264,7 +264,7 @@ if has("gui_macvim")
   map <D-5> :tabfirst<Cr>5gt
 endif
 
-GVIM stuff
+"GVIM stuff
 if has("win32")
   set guifont=Consolas:h10
   colorscheme solarized
