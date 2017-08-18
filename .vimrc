@@ -56,6 +56,30 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 
 
+"Interactive command execution in Vim.
+Plugin 'Shougo/vimproc.vim'
+
+Plugin 'shougo/vimshell'
+
+"Better Rainbow Parentheses
+Plugin 'kien/rainbow_parentheses.vim'
+"Plugin 'tpope/vim-sexp-mappings-for-regular-people.git'
+"Plugin 'guns/vim-sexp.git'
+"Plugin 'tpope/vim-repeat.git'
+"Plugin 'tpope/vim-surround.git'
+
+"vim-hy
+Plugin 'Shougo/hylang/vim-hy'
+
+
+
+
+
+
+
+
+
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -64,6 +88,10 @@ filetype plugin indent on    " required
 let g:javascript_plugin_jsdoc = 1
 
 let g:neocomplete#enable_at_startup = 1
+
+autocmd BufRead,BufNewFile * RainbowParenthesesLoadRound
+autocmd BufRead,BufNewFile * RainbowParenthesesActivate
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

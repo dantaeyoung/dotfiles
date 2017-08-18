@@ -6,6 +6,7 @@ export DOTFILESPATH="$HOME/github/dotfiles"
 source $DOTFILESPATH/config/bash/path
 source $DOTFILESPATH/config/bash/secrets
 
+source "/usr/local/bin/virtualenvwrapper.sh" 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/provolot/.oh-my-zsh
 
