@@ -69,7 +69,7 @@ Plugin 'kien/rainbow_parentheses.vim'
 "Plugin 'tpope/vim-surround.git'
 
 "vim-hy
-Plugin 'Shougo/hylang/vim-hy'
+Plugin 'hylang/vim-hy'
 
 
 
@@ -263,3 +263,11 @@ if has("gui_macvim")
   map <D-4> :tabfirst<Cr>4gt
   map <D-5> :tabfirst<Cr>5gt
 endif
+
+GVIM stuff
+if has("win32")
+  set guifont=Consolas:h10
+  colorscheme solarized
+endif
+
+
