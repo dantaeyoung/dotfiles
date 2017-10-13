@@ -58,7 +58,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+#plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -90,6 +90,19 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias gp='git pull'
+alias gps='git push'
+
+function gc() {
+    if [ -n "$1" ]
+    then
+        git commit -am "$1"
+    else
+        git commit -m "update"
+    fi
+}
+
+#
 #
 
 PROMPT='%F{039}%n%f@%F{069}%m%f %F{057}%1~%f %# '
