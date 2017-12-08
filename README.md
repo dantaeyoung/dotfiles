@@ -5,7 +5,7 @@ dotfiles
 
 ### Usage:
 
-remove .vim/ dir, then run in repo dir:
+remove `.vim/` dir, then run in repo dir:
 
 ```
 ln -sfv "$(pwd)/.vim" ~
