@@ -69,9 +69,10 @@ Plugin 'kien/rainbow_parentheses.vim'
 "Plugin 'tpope/vim-surround.git'
 
 "vim-hy
-Plugin 'hylang/vim-hy'
+"Plugin 'hylang/vim-hy'
 
-
+"You don't Complete Me; Vim Completes Me! A super simple, super minimal, super light-weight tab completion plugin for Vim.
+Plugin 'ajh17/VimCompletesMe'
 
 
 

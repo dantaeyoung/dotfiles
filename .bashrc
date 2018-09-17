@@ -25,19 +25,19 @@ umask 002
 EDITOR=/usr/bin/vim
 PS1="[\u@\H:\w ] $ "
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export TZ=America/New_York
 
 alias vi='/usr/bin/vim'
 
 
-export NVM_DIR="/Users/provolot/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-
-#. /Users/provolot/torch/install/bin/torch-activate
-
 export DOTFILESPATH="$HOME/github/dotfiles"
 source $DOTFILESPATH/config/bash/path
-source $DOTFILESPATH/config/bash/secrets
+#source $DOTFILESPATH/config/bash/secrets
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+eval "$(pyenv init -)"
