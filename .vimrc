@@ -39,6 +39,15 @@ Plugin 'christoomey/vim-tmux-navigator'
 "CoffeeScript support for vim
 Plugin 'kchmck/vim-coffee-script'
 
+"Distraction-free writing in Vim.
+Plugin 'junegunn/goyo.vim'
+
+"Hyperfocus-writing in Vim.
+Plugin 'junegunn/limelight.vim'
+
+"Low-contrast Vim color scheme based on Seoul Colors
+Plugin 'junegunn/seoul256.vim'
+
 
 """"""""" LANGUAGE-SPECIFIC
 "CoffeeScript support for vim
@@ -190,6 +199,9 @@ set number
 :inoremap jk <Esc>
 :xnoremap jk <Esc>
 
+" set line breaks to not break in the middle of a word
+set formatoptions+=l
+set lbr
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -272,3 +284,17 @@ if has("win32")
 endif
 
 
+" Goyo / limelight / distraction free writing
+let g:limelight_conceal_ctermfg = 'gray'
+function! s:goyo_enter()
+  colo seoul256
+  Limelight
+endfunction
+
+function! s:goyo_leave()
+  color solarized
+  Limelight!
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
