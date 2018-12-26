@@ -48,6 +48,12 @@ Plugin 'junegunn/limelight.vim'
 "Low-contrast Vim color scheme based on Seoul Colors
 Plugin 'junegunn/seoul256.vim'
 
+"one colorscheme pack to rule them all!
+Plugin 'flazz/vim-colorschemes'
+
+"press F8 / Shift F8 to switch colorschemes.. alt F8 for a random one
+Plugin 'felixhummel/setcolors.vim'
+
 
 """"""""" LANGUAGE-SPECIFIC
 "CoffeeScript support for vim

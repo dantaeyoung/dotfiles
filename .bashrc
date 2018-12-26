@@ -33,6 +33,7 @@ alias vi='/usr/bin/vim'
 export DOTFILESPATH="$HOME/github/dotfiles"
 source $DOTFILESPATH/config/bash/path
 #source $DOTFILESPATH/config/bash/secrets
+export PATH="$PATH:$HOME/bin"
 
 
 export NVM_DIR="$HOME/.nvm"
@@ -41,3 +42,7 @@ export NVM_DIR="$HOME/.nvm"
 
 
 eval "$(pyenv init -)"
+
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
+export PATH=/Users/provolot/.local/bin:$PATH
