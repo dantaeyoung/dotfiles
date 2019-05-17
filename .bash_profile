@@ -23,3 +23,6 @@ export PS1="\[\033[0;35m\]\h \[\033[1;35m\](\w) \[\033[0;35m\]> \[\033[0;37m\] \
 
 umask 002
 EDITOR=/usr/bin/vim
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi

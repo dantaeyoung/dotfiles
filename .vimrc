@@ -70,6 +70,12 @@ Plugin 'jelera/vim-javascript-syntax'
 
 Plugin 'pangloss/vim-javascript'
 
+"React JSX syntax highlighting and indenting for vim.
+Plugin 'mxw/vim-jsx'
+
+"An up-to-date Vim syntax for PHP (7.x supported)
+Plugin 'StanAngeloff/php.vim'
+
 
 "Interactive command execution in Vim.
 Plugin 'Shougo/vimproc.vim'
@@ -89,7 +95,8 @@ Plugin 'kien/rainbow_parentheses.vim'
 "You don't Complete Me; Vim Completes Me! A super simple, super minimal, super light-weight tab completion plugin for Vim.
 Plugin 'ajh17/VimCompletesMe'
 
-
+"prettier linting for js
+Plugin 'prettier/vim-prettier'
 
 
 
