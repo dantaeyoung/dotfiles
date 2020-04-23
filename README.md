@@ -25,4 +25,4 @@ one line, for my pleasure:
 
 `curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
 
-and run `VundleInstall` in vim.
+and run `PlugInstall` in vim.
