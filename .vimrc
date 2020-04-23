@@ -1,108 +1,111 @@
 """"""""""""""""""""""
-" VUNDLE
+" vim-plug
 """"""""""""""""""""
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
+"
 "Syntax Highlight for Vue.js components
-Plugin 'posva/vim-vue'
+"Plug 'posva/vim-vue'
 
 "Next generation completion framework after neocomplcache
-Plugin 'Shougo/neocomplete'
+"Plug 'Shougo/neocomplete'
 
 "A vim plugin to display the indention levels with thin vertical lines
-Plugin 'Yggdroot/indentLine'
+"Plug 'Yggdroot/indentLine'
 "A Vim plugin for visually displaying indent levels in code
-"Plugin 'nathanaelkane/vim-indent-guides'
+"Plug 'nathanaelkane/vim-indent-guides'
 
 "A tree explorer plugin for vim.
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 "A plugin of NERDTree showing git status
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 "Vim plugin for intensely orgasmic commenting
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 "lean & mean status/tabline for vim that's light as air
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 
-Plugin 'christoomey/vim-tmux-navigator'
+"Plug 'christoomey/vim-tmux-navigator'
 "Seamless navigation between tmux panes and vim splits
 
 "CoffeeScript support for vim
-Plugin 'kchmck/vim-coffee-script'
+"Plug 'kchmck/vim-coffee-script'
 
 "Distraction-free writing in Vim.
-Plugin 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim'
 
 "Hyperfocus-writing in Vim.
-Plugin 'junegunn/limelight.vim'
+"Plug 'junegunn/limelight.vim'
 
 "Low-contrast Vim color scheme based on Seoul Colors
-Plugin 'junegunn/seoul256.vim'
+Plug 'junegunn/seoul256.vim'
 
 "one colorscheme pack to rule them all!
-Plugin 'flazz/vim-colorschemes'
+Plug 'flazz/vim-colorschemes'
 
 "press F8 / Shift F8 to switch colorschemes.. alt F8 for a random one
-Plugin 'felixhummel/setcolors.vim'
+Plug 'felixhummel/setcolors.vim'
 
+"Check syntax in Vim asynchronously and fix files, with Language Server Protocol (LSP) support
+Plug 'dense-analysis/ale'
 
 """"""""" LANGUAGE-SPECIFIC
 "CoffeeScript support for vim
-"Plugin 'kchmck/vim-coffee-script'
+"Plug 'kchmck/vim-coffee-script'
 
 "CSS3 syntax (and syntax defined in some foreign specifications) support for Vim's built-in syntax/css.vim
-Plugin 'hail2u/vim-css3-syntax'
+"Plug 'hail2u/vim-css3-syntax'
 
 "Vim Pug (formerly Jade) template engine syntax highlighting and indent
-"Plugin 'digitaltoad/vim-puge'
+"Plug 'digitaltoad/vim-puge'
 
 "Enhanced javascript syntax file for Vim 
-Plugin 'jelera/vim-javascript-syntax'
+"Plug 'jelera/vim-javascript-syntax'
 
-Plugin 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript'
 
 "React JSX syntax highlighting and indenting for vim.
-Plugin 'mxw/vim-jsx'
+"Plug 'mxw/vim-jsx'
+
+"A collection of language packs for Vim.
+Plug 'sheerun/vim-polyglot'
+
+"[Vim script] JSX and TSX syntax pretty highlighting for vim.
+"Plug 'MaxMEllon/vim-jsx-pretty'
 
 "An up-to-date Vim syntax for PHP (7.x supported)
-Plugin 'StanAngeloff/php.vim'
+"Plug 'StanAngeloff/php.vim'
 
 
 "Interactive command execution in Vim.
-Plugin 'Shougo/vimproc.vim'
+"Plug 'Shougo/vimproc.vim'
 
-Plugin 'shougo/vimshell'
+"Plug 'shougo/vimshell'
 
 "Better Rainbow Parentheses
-Plugin 'kien/rainbow_parentheses.vim'
-"Plugin 'tpope/vim-sexp-mappings-for-regular-people.git'
-"Plugin 'guns/vim-sexp.git'
-"Plugin 'tpope/vim-repeat.git'
-"Plugin 'tpope/vim-surround.git'
+Plug 'kien/rainbow_parentheses.vim'
+"Plug 'tpope/vim-sexp-mappings-for-regular-people.git'
+"Plug 'guns/vim-sexp.git'
+"Plug 'tpope/vim-repeat.git'
+"Plug 'tpope/vim-surround.git'
 
 "vim-hy
-"Plugin 'hylang/vim-hy'
+"Plug 'hylang/vim-hy'
 
 "You don't Complete Me; Vim Completes Me! A super simple, super minimal, super light-weight tab completion plugin for Vim.
-Plugin 'ajh17/VimCompletesMe'
+"Plug 'ajh17/VimCompletesMe'
 
 "prettier linting for js
-Plugin 'prettier/vim-prettier'
+Plug 'prettier/vim-prettier'
 
 
+" Initialize plugin system
+call plug#end()
 
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
 filetype plugin indent on    " required
 
 let g:javascript_plugin_jsdoc = 1
@@ -173,7 +176,7 @@ set pastetoggle=<c-p>
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
-syntax enable 
+syntax on
 
 " Enable 256 colors palette in Gnome Terminal
 if $COLORTERM == 'gnome-terminal'
@@ -197,15 +200,15 @@ set expandtab
 
 
 
-" 1 tab == 4 spaces
-set tabstop=4       " The width of a TAB is set to 4.
+" 1 tab == 2 spaces
+set tabstop=2       " The width of a TAB is set to 4.
                     " Still it is a \t. It is just that
                     " Vim will interpret it to be having
                     " a width of 4.
 
-set shiftwidth=4    " Indents will have a width of 4
+set shiftwidth=2    " Indents will have a width of 4
 
-set softtabstop=4   " Sets the number of columns for a TAB
+set softtabstop=2   " Sets the number of columns for a TAB
 
 set expandtab       " Expand TABs to spaces
 
@@ -306,6 +309,10 @@ if has("win32")
   colorscheme solarized
 endif
 
+"JSX stuff
+
+let g:vim_jsx_pretty_template_tags =['html', 'jsx', 'js']
+let g:vim_jsx_pretty_colorful_config = 1 " default 0
 
 " Goyo / limelight / distraction free writing
 let g:limelight_conceal_ctermfg = 'gray'
