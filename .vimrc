@@ -18,9 +18,9 @@ call plug#begin('~/.vim/plugged')
 "Plug 'nathanaelkane/vim-indent-guides'
 
 "A tree explorer plugin for vim.
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 "A plugin of NERDTree showing git status
-Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'Xuyuanp/nerdtree-git-plugin'
 
 "Vim plugin for intensely orgasmic commenting
 Plug 'scrooloose/nerdcommenter'
@@ -28,6 +28,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+"Solarized
+Plug 'altercation/vim-colors-solarized'
 
 "Plug 'christoomey/vim-tmux-navigator'
 "Seamless navigation between tmux panes and vim splits
@@ -101,6 +103,9 @@ Plug 'kien/rainbow_parentheses.vim'
 
 "prettier linting for js
 Plug 'prettier/vim-prettier'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 
 
 " Initialize plugin system
@@ -212,6 +217,8 @@ set softtabstop=2   " Sets the number of columns for a TAB
 
 set expandtab       " Expand TABs to spaces
 
+set smarttab
+
 
 set ai "Auto indent
 set si "Smart indent
@@ -309,6 +316,10 @@ if has("win32")
   colorscheme solarized
 endif
 
+set background=dark
+let g:solarized_termcolors=256 "this is what fixed it for me
+colorscheme solarized
+
 "JSX stuff
 
 let g:vim_jsx_pretty_template_tags =['html', 'jsx', 'js']
@@ -328,3 +339,16 @@ endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+" coc.nvim autocomplete
+"
+" " use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
