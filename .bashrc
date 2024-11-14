@@ -46,3 +46,6 @@ eval "$(pyenv init -)"
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 export PATH=/Users/provolot/.local/bin:$PATH
+
+export PATH=$PATH:~/.composer/vendor/bin
+

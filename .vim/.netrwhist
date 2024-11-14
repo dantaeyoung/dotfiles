@@ -1,4 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/provolot/other_github/osc.js-examples/chrome-app/html'
-let g:netrw_dirhist_2='/Users/provolot/github/twobytwo'
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/Users/provolot/SCRATCH/outputs'
+let g:netrw_dirhist_1='/Users/provolot/Dropbox/_Projects/2023 Projects/Terralibrary'
